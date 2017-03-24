@@ -1,0 +1,26 @@
+{
+  "name": "responsive-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docco": "node_modules/.bin/docco -L languages.json gallery.html style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbobeirne/nycda-responsive-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbobeirne/nycda-responsive-challenge/issues"
+  },
+  "homepage": "https://github.com/wbobeirne/nycda-responsive-challenge#readme",
+  "devDependencies": {
+    "docco": "^0.7.0"
+  }
+}

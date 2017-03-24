@@ -1,11 +1,18 @@
 <html>
   <head>
+    // This is the viewport tag that should be used for any responsive site. This will
+    // tell the browser on mobile devices that the phone should not zoom out to try
+    // and show the whole page, as it would to a desktop size. You can see an example
+    // of this over [here](https://www.w3schools.com/css/css_rwd_viewport.asp).
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="reset.css"/>
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
 
   <body>
+    // Here I place in all of the `.gallery-image` elements inside of the `.gallery`.
+    // You'll notice that I don't need any additional markup or attributes for the
+    // images, that's entirely handled in CSS.
     <div class="gallery">
       <div class="gallery-image"></div>
       <div class="gallery-image"></div>
@@ -20,3 +27,5 @@
     </div>
   </body>
 </html>
+
+// Find out how all of this is styled in the [style.css](./style.html) file.
