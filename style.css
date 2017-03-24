@@ -1,4 +1,6 @@
+/*
 // Set the box model sizing to border box on all elements, as discussed in class.
+*/
 *, *:after, *:before {
   box-sizing: border-box;
 }
@@ -7,12 +9,14 @@ body {
   background: #222;
 }
 
+/*
 // We use max-width, so that when the screen goes below 1020px, instead of the
 // `.gallery` element staying 1020px, it uses width 100% to size responsively.
 // 1020px is 480px (image) + 20px (margin) + 10px (border) times 2, exactly
 // where the elements would start wrapping. This makes it so that even though
 // the `.gallery-image` elements are floated left, they will look center
 // aligned, since `.gallery` is center aligned.
+*/
 .gallery {
   width: 100%;
   max-width: 1020px;
@@ -25,18 +29,22 @@ body {
   height: 480px;
   margin: 10px;
   border: 5px solid #FFF;
+  /*
   // Setting `background-repeat: no-repeat;` and `background-size: cover;` will
   // make the `background-image` behave well, even when the image is smaller or
   // larger than the element it's the background of. You can read more about
   // `background-size` [here](https://css-tricks.com/almanac/properties/b/background-size/).
+  */
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+/*
 // Here we use the `:nth-child` pseudo-class to give every third `.gallery-image`
 // a different background. This is a powerful selector tool that can let you do
 // things like select even elements, odd elements, or elements every N elements
 // as seen here. You can read more about it over [here](https://css-tricks.com/almanac/selectors/n/nth-child/).
+*/
 .gallery-image:nth-child(3n+1) {
   background-image: url('images/image-1-large.jpg');
 }
@@ -47,8 +55,10 @@ body {
   background-image: url('images/image-3-large.jpg');
 }
 
+/*
 // Now at 1020px (As noted above), we want the images to be center aligned
 // instead of floated, because they would start to wrap here.
+*/
 @media all and (max-width: 1020px) {
   .gallery-image {
     float: none;
@@ -56,22 +66,28 @@ body {
   }
 }
 
+/*
 // 500px is where having a high res image doesn't matter that much anymore,
 // and the image will now be touching the sides. Fall back to small image, and
 // kill the border around the images.
+*/
 @media all and (max-width: 500px) {
   .gallery-image {
     border: none;
+    /*
     // Here I'm using the `vw` unit to make the images handle device size better.
     // What this does is make the width and height of each image 100% of the
     // viewport width, so that the images maintain their square shape. There
     // are also other tricks for making elements maintain a particular aspect
     // ratio, read more about that [here](http://www.mademyday.de/css-height-equals-width-with-pure-css.html).
+    */
     width: 100vw;
     height: 100vw;
   }
 
+  /*
   // Again we use `:nth-child` as seen before, to change to the smaller images.
+  */
   .gallery-image:nth-child(3n+1) {
     background-image: url('images/image-1-small.jpg');
   }
