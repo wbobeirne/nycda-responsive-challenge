@@ -1,0 +1,69 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+}
+
+/*
+  1020 is 480px (image) + 20px (margin) + 10px (border) times 2. This will
+  center align them, even though they're floated left.
+*/
+.gallery {
+  width: 100%;
+  max-width: 1020px;
+  margin: auto;
+}
+
+.gallery-image {
+  display: block;
+  float: left;
+  width: 480px;
+  height: 480px;
+  margin: 10px;
+  border: 5px solid #FFF;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gallery-image:nth-child(3n+1) {
+  background-image: url('images/image-1-large.jpg');
+}
+.gallery-image:nth-child(3n+2) {
+  background-image: url('images/image-2-large.jpg');
+}
+.gallery-image:nth-child(3n+3) {
+  background-image: url('images/image-3-large.jpg');
+}
+
+/* Now at 1020, we want the images to be center aligned instead of floated */
+@media all and (max-width: 1020px) {
+  .gallery-image {
+    float: none;
+    margin: 10px auto;
+  }
+}
+
+/*
+  500 is where having a high res image doesn't matter that much anymore,
+  and the image will now be touching the sides. Fall back to small image, and
+  kill the border.
+*/
+@media all and (max-width: 500px) {
+  .gallery-image {
+    border: none;
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .gallery-image:nth-child(3n+1) {
+    background-image: url('images/image-1-small.jpg');
+  }
+  .gallery-image:nth-child(3n+2) {
+    background-image: url('images/image-2-small.jpg');
+  }
+  .gallery-image:nth-child(3n+3) {
+    background-image: url('images/image-3-small.jpg');
+  }
+}
